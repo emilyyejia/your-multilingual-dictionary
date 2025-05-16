@@ -1,5 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const User = require('../models/user');
+const Word = require('../models/word');
+const Meaning = require('../models/meaning');
 
 // Middleware used to protect routes that need a logged in user
 const ensureLoggedIn = require('../middleware/ensure-logged-in');
@@ -13,13 +16,13 @@ const ensureLoggedIn = require('../middleware/ensure-logged-in');
 // GET /unicorns
 // Example of a non-protected route
 router.get('/', (req, res) => {
-  res.send('List of all unicorns - not protected');
+  res.send('Haha');
 });
 
 // GET /unicorns/new
 // Example of a protected route
 router.get('/new', ensureLoggedIn, (req, res) => {
-  res.send('Create a unicorn!');
+  res.send('Create a word!');
 });
 
 module.exports = router;
