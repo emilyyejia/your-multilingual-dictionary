@@ -1,0 +1,21 @@
+<%- include('../partials/header.ejs') %>
+
+<h1>Word Details</h1>
+<div>
+    <h2><%= word.name %></h2>
+    <ul>
+        <% word.meanings.forEach((meaning) => { %>
+            <li>
+                <p><strong>Explanation:</strong> <%= meaning.explanation %></p>
+                <% if (meaning.image) { %>
+                    <img src="<%= meaning.image %>" alt="<%= word.name %> image" style="max-width: 200px;">
+                <% } %>
+                </li>
+       <% }) %>
+    </ul>
+    <form action="/words/<%= word._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete</button>
+    </form>
+    <button type="submit"><a href="/words/<%= word._id %>/edit">Edit</a></button>
+   
+<%- include('../partials/footer.ejs') %>

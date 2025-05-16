@@ -1,0 +1,18 @@
+<%- include('../partials/header.ejs') %>
+
+<h1>Your Dictionary</h1>
+<% if (words.length){ %>
+    <% words.forEach((word) => { %>
+        <ul>
+            <li><a href="/words/<%= word._id %>"><%= word.name%></a></li>   
+        </ul>
+        
+   <% }); %>
+
+<% } else {%>
+    <p>Add word to your dictionary!</p>
+
+<% } %>
+
+<button type="submit"><a href="/words/new">Add Word</a></button>
+<%- include('../partials/footer.ejs') %>

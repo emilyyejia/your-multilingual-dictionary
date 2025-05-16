@@ -50,7 +50,7 @@ app.get('/', (req, res) => {
 // appended to the "starts with" path
 app.use('/auth', require('./controllers/auth'));
 
-app.use('words', require('./controllers/words'));
+app.use('/words', require('./controllers/words'));
 
 
 app.listen(port, () => {
