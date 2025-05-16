@@ -2,20 +2,10 @@
 
 <h1><%= word.name %></h1>
 <form action="/words/<%= word._id %>?_method=PUT" method="POST">
-
- 
-        <div>
-            <label for="explanation">Explain it in your home language:</label>
-            <input type="text" id="explanation" name="explanation" value="<%= word.meanings[0].explanation %>">
-        </div>
-        <div>
-            <label for="image">You can add a Image URL(optional):</label>
-            <input type="url" id="image" name="image" value="<%= word.meanings[0].image %>">
-        </div>
-
-   
-    
-
+        <label for="explanation">Explain it in your home language:</label>
+        <input type="text" id="explanation" name="explanation" value="<%= word.meanings[0].explanation %>">
+        <label for="image">You can add a Image URL(optional):</label>
+        <input type="url" id="image" name="image" value="<%= word.meanings[0].image %>">
     <button type="submit">Update</button>
 </form>
 

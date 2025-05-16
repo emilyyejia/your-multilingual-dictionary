@@ -3,10 +3,11 @@
 <h1>Your Dictionary</h1>
 <% if (words.length){ %>
     <% words.forEach((word) => { %>
-        <ul>
+        <h2>
+            <ul>
             <li><a href="/words/<%= word._id %>"><%= word.name%></a></li>   
-        </ul>
-        
+           </ul>
+        </h2>    
    <% }); %>
 
 <% } else {%>

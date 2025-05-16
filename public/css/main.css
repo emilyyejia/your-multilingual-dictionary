@@ -57,6 +57,7 @@ form * {
   font-size: 2vmin;
   padding: 1vmin;
   border-radius: 1vmin;
+  align-items: center;
 }
 
 input,
@@ -69,6 +70,18 @@ form button[type='submit'] {
   grid-column: span 2;
 }
 
+button[type='submit'] {
+  font-size: 2vmin;
+  font-weight: bold;
+  padding: 1vmin;
+  border-radius: 1vmin;
+  border: 0.3vmin solid black;
+  background-color: white;
+  width: 100%; /* Make it span full width if outside grid */
+  max-width: 40vmin; /* Optional: limit width */
+  margin: 2vmin auto; /* Center if not in a grid */
+  display: block; 
+}
 button:hover {
   background-color: lightslategray;
   color: white;
