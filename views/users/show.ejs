@@ -1,0 +1,21 @@
+<%- include('../partials/header.ejs') %>
+
+<h1>Word Details</h1>
+<div>
+    <h2><%= word.name %></h2>
+    <ul>
+        <% word.meanings.forEach((meaning) => { %>
+            <li>
+                <p><strong>Explanation:</strong> <%= meaning.explanation %></p>
+                <% if (meaning.image) { %>
+                    <img src="<%= meaning.image %>" alt="<%= word.name %> image" style="max-width: 200px;">
+                <% } %>
+                </li>
+       <% }) %>
+    </ul>
+    <button type="submit"><a href="/community/<%= word._id  %>/new">Contribute to this word</a></button>
+    <form action="/community/<%= word._id %>/dictionary" method="POST">
+        <button type="submit">Add it to my dictionary</button>
+     
+    </form>
+<%- include('../partials/footer.ejs') %>

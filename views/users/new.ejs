@@ -1,0 +1,14 @@
+<%- include('../partials/header.ejs') %>
+
+<h1><%= word.name %></h1>
+<form action="/community/<%= word._id %>/contribute" method="POST">
+       
+        <label for="explanation">Explain it in your home language:</label>
+        <input type="text" id="explanation" name="explanation" required>
+        <label for="image">You can add a Image URL(optional):</label>
+        <input type="url" id="image" name="image" placeholder="https://example.com/image.jpg">
+
+    <button type="submit">Add meaning to this word</button>
+</form>
+
+<%- include('../partials/footer.ejs') %>

@@ -9,7 +9,10 @@ const meaningSchema = new Schema({
     image: {
         type: String,
     },
-
+    contributor: {
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }
 }, {
     timestamps: true
 });

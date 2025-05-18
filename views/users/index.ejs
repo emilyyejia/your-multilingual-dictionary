@@ -1,0 +1,17 @@
+<%- include('../partials/header.ejs') %>
+
+<h1>Glossary List</h1>
+<% if (words.length){ %>
+    <% words.forEach((word) => { %>
+        <h2>
+            <ul>
+            <li><a href="/community/<%= word._id %>"><%= word.name%></a></li>   
+           </ul>
+        </h2>    
+   <% }); %>
+
+<% } else {%>
+    <p>Contribute to our community by signing up!</p>
+
+<% } %>
+<%- include('../partials/footer.ejs') %>

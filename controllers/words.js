@@ -7,7 +7,8 @@ const ensureLoggedIn = require('../middleware/ensure-logged-in');
 router.use(ensureLoggedIn);
 
 router.get('/', async (req, res) => {
-  const words = await Word.find({owner: req.session.userId});
+  const user = await User.findById(req.session.userId).populate('dictionary');
+  const words = user.dictionary;
   res.render('words/index.ejs', {words});
 });
 
@@ -20,11 +21,14 @@ router.post('/', async(req, res) => {
   try {
     req.body.owner = req.session.userId;
     const newMeaning = await Meaning.create(req.body);
-    await Word.create({
+    const word = await Word.create({
       name: req.body.name,
       owner: req.body.owner,
       meanings: [newMeaning._id],
     });
+    await User.findByIdAndUpdate(req.session.userId, {
+      $addToSet: { dictionary: word._id }
+    });    
     res.redirect('/words');
     
   } catch (err) {
@@ -41,12 +45,17 @@ router.get('/:id', async (req, res) => {
 });
 
 router.delete('/:id', async (req, res) => {
-  await Word.findByIdAndDelete(req.params.id);
+  await User.findByIdAndUpdate(req.session.userId, {
+    $pull: { dictionary: req.params.id}
+  });
   res.redirect('/words');
 });
 
 router.get('/:id/edit', async (req, res) => {
   const word = await Word.findById(req.params.id).populate('meanings'); 
+  if (!word.owner.equals(req.session.userId)) {
+    return res.redirect('/words');
+  };
   res.render('words/edit.ejs', {word});
 });
 
@@ -58,11 +67,11 @@ router.put('/:id', async(req, res) => {
       {explanation: req.body.explanation, image: req.body.image}
     );
 
-    res.redirect('/words');
+    res.redirect(`/words/${req.params.id}`);
     
   } catch (err) {
     console.log(err);
-    res.redirect('/words');
+    res.redirect('/');
     
   }
 });

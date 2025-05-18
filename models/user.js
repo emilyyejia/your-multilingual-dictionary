@@ -16,6 +16,11 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  dictionary: {
+    type: [Schema.Types.ObjectId],
+    ref: 'Word',
+  },
+
 }, {
   // Mongoose will maintain a createdAt & updatedAt property
   timestamps: true

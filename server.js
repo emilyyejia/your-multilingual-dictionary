@@ -49,8 +49,8 @@ app.get('/', (req, res) => {
 // paths defined in the router/controller will be
 // appended to the "starts with" path
 app.use('/auth', require('./controllers/auth'));
-
 app.use('/words', require('./controllers/words'));
+app.use('/community', require('./controllers/users'));
 
 
 app.listen(port, () => {
