@@ -10,12 +10,18 @@
                 <% if (meaning.image) { %>
                     <img src="<%= meaning.image %>" alt="<%= word.name %> image" style="max-width: 200px;">
                 <% } %>
+                <% if ( word.owner && word.owner._id &&
+                meaning.contributor && meaning.contributor._id &&
+                meaning.contributor._id.toString() === userId){ %>
+                    <button type="submit"><a href="/words/<%= word._id %>/edit">Edit</a></button>
+                <% } %>
+
                 </li>
        <% }) %>
     </ul>
     <form action="/words/<%= word._id %>?_method=DELETE" method="POST">
         <button type="submit">Delete</button>
     </form>
-    <button type="submit"><a href="/words/<%= word._id %>/edit">Edit</a></button>
+    
    
 <%- include('../partials/footer.ejs') %>

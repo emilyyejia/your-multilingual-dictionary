@@ -6,7 +6,12 @@ const Meaning = require('../models/meaning');
 const ensureLoggedIn = require('../middleware/ensure-logged-in');
 
 router.get('/', async (req, res) => {
-    const words = await Word.find({});
+    const words = await Word.find({})
+    .populate('owner')
+    .populate({
+      path: 'meanings',
+      populate: { path: 'contributor' } 
+  });
     res.render('users/index.ejs', { words });
 });
 

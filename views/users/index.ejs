@@ -1,11 +1,25 @@
 <%- include('../partials/header.ejs') %>
 
-<h1>Glossary List</h1>
+<h1>Word Junction</h1>
 <% if (words.length){ %>
     <% words.forEach((word) => { %>
         <h2>
             <ul>
-            <li><a href="/community/<%= word._id %>"><%= word.name%></a></li>   
+            <li><%= word.name.toUpperCase() %></li>   
+            <p>created by <%= word.owner.name%> on <%= word.owner.createdAt.toLocaleDateString() %></p>
+            <% word.meanings.forEach((meaning) => { %>
+                <li>
+                    <p><strong>Explanation:</strong> <%= meaning.explanation %> 
+                        <% if (meaning.contributor) { %>
+                            contributed by <%= meaning.contributor.name %> on <%= meaning.contributor.createdAt.toLocaleDateString() %>
+                        <% } %>
+                    </p>
+                    <% if (meaning.image) { %>
+                        <img src="<%= meaning.image %>" alt="<%= word.name %> image" style="max-width: 200px;">
+                    <% } %>
+                    </li>
+           <% }) %>
+
            </ul>
         </h2>    
    <% }); %>

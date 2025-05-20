@@ -13,9 +13,9 @@
                 </li>
        <% }) %>
     </ul>
-    <button type="submit"><a href="/community/<%= word._id  %>/new">Contribute to this word</a></button>
+    <button type="submit"><a href="/community/<%= word._id  %>/new">Add Explanation</a></button>
     <form action="/community/<%= word._id %>/dictionary" method="POST">
-        <button type="submit">Add it to my dictionary</button>
+        <button type="submit">Add to My Word Bank</button>
      
     </form>
 <%- include('../partials/footer.ejs') %>

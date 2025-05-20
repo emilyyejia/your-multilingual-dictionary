@@ -8,13 +8,13 @@
 
 <% if (searchedItem) { %>
   <% if (word) { %>
-    <h2>Found:</h2>
+    <h2>Ta-da! We found it:</h2>
     <p><a href="/community/<%= word._id %>"><%= word.name %></a></p>
   <% } else { %>
-    <h2>No results found. Create "<%= searchedItem %>" in your dictionary.</h2>
+    <h2>Hmm... "<%= searchedItem %>" isn’t in the dictionary yet. Sign in and let the word-building begin!</h2>
   <% } %>
 <% } else { %>
-  <h2>Please enter a word to search.</h2>
+  <h2>Look it up first—your brilliant word might already exist!</h2>
 <% } %>
 
 <%- include('./partials/footer.ejs') %>

@@ -39,8 +39,14 @@ router.post('/', async(req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
- const word = await Word.findById(req.params.id).populate('meanings'); 
- res.render('words/show.ejs', { word });
+ const userId = req.session.userId;
+ const word = await Word.findById(req.params.id)
+ .populate('owner')
+ .populate({
+  path: 'meanings',
+  populate: { path: 'contributor' } 
+});
+ res.render('words/show.ejs', { word, userId });
 
 });
 
@@ -53,9 +59,7 @@ router.delete('/:id', async (req, res) => {
 
 router.get('/:id/edit', async (req, res) => {
   const word = await Word.findById(req.params.id).populate('meanings'); 
-  if (!word.owner.equals(req.session.userId)) {
-    return res.redirect('/words');
-  };
+  
   res.render('words/edit.ejs', {word});
 });
 
