@@ -8,7 +8,7 @@ const methodOverride = require("method-override");
 
 const morgan = require("morgan");
 const session = require('express-session');
-
+const Word = require('./models/word');
 
 const port = process.env.PORT || 3000;
 
@@ -41,8 +41,12 @@ app.use(require('./middleware/add-user-to-req-and-locals'));
 // Routes below
 
 // GET / (root/default) -> Home Page
-app.get('/', (req, res) => {
-  res.render('home.ejs');
+app.get('/', async (req, res) => {
+  const searchedItem = req.query.word || '';
+  const query = searchedItem ? { name:searchedItem } : null;
+  const word = await Word.findOne(query);
+  res.render('home.ejs', { searchedItem, word});
+ 
 });
 
 // The '/auth' is the "starts with" path.  The
