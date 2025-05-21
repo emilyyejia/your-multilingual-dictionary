@@ -4,23 +4,23 @@
 <div>
     <h2><%= word.name %></h2>
     <ul>
-        <% word.meanings.forEach((meaning) => { %>
+        <% word.meanings.forEach((meaning, index) => { %>
             <li>
                 <p><strong>Explanation:</strong> <%= meaning.explanation %></p>
                 <% if (meaning.image) { %>
                     <img src="<%= meaning.image %>" alt="<%= word.name %> image" style="max-width: 200px;">
                 <% } %>
-                <% if ( word.owner && word.owner._id &&
-                meaning.contributor && meaning.contributor._id &&
-                meaning.contributor._id.toString() === userId){ %>
-                    <button type="submit"><a href="/words/<%= word._id %>/edit">Edit</a></button>
+                <% if (meaning.contributor && meaning.contributor._id.toString() === userId){ %>
+                    <button type="submit"><a href="/words/<%= word._id %>/meanings/<%= meaning._id%>/edit">Edit</a></button>
+                <% } else { %>
+                    <p>Only creater can tweek the word!</p>
                 <% } %>
-
                 </li>
        <% }) %>
     </ul>
+ 
     <form action="/words/<%= word._id %>?_method=DELETE" method="POST">
-        <button type="submit">Delete</button>
+        <button type="submit">Remove from My Shelf </button>
     </form>
     
    
