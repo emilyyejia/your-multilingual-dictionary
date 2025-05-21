@@ -1,9 +1,9 @@
 <%- include('./partials/header.ejs') %>
-<h1>Home</h1>
-
-<form action="/" method="GET" >
-  <input type="text" name="word" placeholder="Search for a word..." value="<%= searchedItem %>">
-  <button type="submit">Search</button>
+<h1 style="color: rgb(41, 216, 41);font-weight: bold;"> WordQuest</h1>
+<img src="/css/homepage.jpg" width="400px" height="300px" alt="colorful books">
+<form action="/" method="GET" class="my-4" >
+  <input type="text" name="word" placeholder="Looking for a word ..." value="<%= searchedItem %>" >
+  <button type="submit" style="width: 100px;" >Search</button>
 </form>
 
 <% if (searchedItem) { %>
@@ -14,7 +14,7 @@
     <h2>Hmm... "<%= searchedItem %>" isn’t in the dictionary yet. Sign in and let the word-building begin!</h2>
   <% } %>
 <% } else { %>
-  <h2>Look it up first—your brilliant word might already exist!</h2>
+  <h2>Discover shared wisdom—search the word first.</h2>
 <% } %>
 
 <%- include('./partials/footer.ejs') %>

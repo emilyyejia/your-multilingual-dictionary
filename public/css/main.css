@@ -12,7 +12,7 @@ body {
 
 nav,
 footer {
-  background-color: rgb(39, 35, 41);
+  background-color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
