@@ -112,7 +112,8 @@ button[type="submit"] {
 
 
 form button[type='submit'] {
-  background-color: white
+  margin: 1rem auto 0;   
+  font-weight: bold; 
 }
 
 
@@ -160,4 +161,22 @@ button:hover {
   display: block;
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+  .meaning-block img {
+    height: 100px;
+    width: 100px;;
+  }
+  h2 {
+    font-size: 1rem!important;
+  }
+}
+.word-details-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
 }
