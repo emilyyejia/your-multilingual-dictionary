@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.freepik.com/free-vector/happy-people-speaking-different-languages_23-2147887758.jpg?uid=R58614155&ga=GA1.1.2074067618.1746232011&semt=ais_hybrid&w=740" alt="multilingual banner" height="300">
+  <img src="https://img.freepik.com/free-vector/illustrations-young-people-talking-different-languages-pack_23-2148375157.jpg?uid=R58614155&ga=GA1.1.2074067618.1746232011&semt=ais_hybrid&w=740" alt="multilingual banner" height="300">
 </p>
 
 <h1 align="center">Your Multilinigual Dictionary</h1>
