@@ -27,20 +27,13 @@ app.use(methodOverride("_method"));
 
 app.use(morgan('dev'));
 
-
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: true
 }));
 
-// If a user is logged in, add the user's doc to req.user and res.locals.user
 app.use(require('./middleware/add-user-to-req-and-locals'));
-
-
-// Routes below
-
-// GET / (root/default) -> Home Page
 app.get('/', async (req, res) => {
   const searchedItem = req.query.word || '';
   const query = searchedItem ? { name:searchedItem } : null;
@@ -49,9 +42,6 @@ app.get('/', async (req, res) => {
  
 });
 
-// The '/auth' is the "starts with" path.  The
-// paths defined in the router/controller will be
-// appended to the "starts with" path
 app.use('/auth', require('./controllers/auth'));
 app.use('/words', require('./controllers/words'));
 app.use('/community', require('./controllers/users'));
