@@ -8,13 +8,13 @@
 
 <% if (searchedItem) { %>
   <% if (word) { %>
-    <h3>Ta-da! We found it:</h2>
+    <div class="text-dark fs-4 fw-bold">Ta-da! We found it:</div>
     <h2><a href="/community/<%= word._id %>"><%= word.name %></a></h2>
   <% } else { %>
-    <h3>Hmm... "<%= searchedItem %>" isn’t in the dictionary yet. Sign in and let the word-building begin!</h2>
+    <div class="text-dark fs-4 fw-bold">Hmm... "<%= searchedItem %>" isn’t in the dictionary yet. Sign in and let the word-building begin!</h2>
   <% } %>
 <% } else { %>
-  <h3>Discover shared wisdom—search the word first.</h2>
+  <div class="text-dark fs-4 fw-bold">Discover shared wisdom—search the word first.</div>
 <% } %>
 
 <%- include('./partials/footer.ejs') %>

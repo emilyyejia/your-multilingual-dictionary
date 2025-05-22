@@ -19,7 +19,7 @@
       <% if (user) { %>
         <a href="/words" style="color: rgb(20, 197, 232);font-weight: bold;">MY WORDSHELF</a>
         <a href="/auth/sign-out" style="color: rgb(20, 197, 232);font-weight: bold;">SIGN OUT</a>
-        <span><%= user.name %></span>
+        <span class="text-dark fs-4 fw-bold"><%= user.name %></span>
       <% } else { %>
         <a href="/auth/sign-in" style="color: rgb(20, 197, 232);font-weight: bold;">SIGN IN</a>
         <a href="/auth/sign-up" class="btn text-white btn-lg" style="background-color:rgb(41, 216, 41);">GET STARTED</a>

@@ -5,17 +5,21 @@
     <h2><%= word.name %></h2>
     <ul>
         <% word.meanings.forEach((meaning, index) => { %>
-            <li>
-                <p><strong>Explanation:</strong> <%= meaning.explanation %></p>
-                <% if (meaning.image) { %>
-                    <img src="<%= meaning.image %>" alt="<%= word.name %> image" style="max-width: 200px;">
-                <% } %>
-                <% if (meaning.contributor && meaning.contributor._id.toString() === userId){ %>
-                    <button type="submit"><a href="/words/<%= word._id %>/meanings/<%= meaning._id%>/edit">Edit</a></button>
-                <% } else { %>
-                    <p>Only creater can tweek the word!</p>
-                <% } %>
+            <div class="meaning-block">
+                <li>
+                    <p>Explanation: <%= meaning.explanation %></p>
+                    <% if (meaning.image) { %>
+                        <img src="<%= meaning.image %>" alt="<%= word.name %> image" style="max-width: 200px;">
+                    <% } %>
+                    <% if (meaning.contributor && meaning.contributor._id.toString() === userId){ %>
+                        <button type="submit"><a href="/words/<%= word._id %>/meanings/<%= meaning._id%>/edit">Edit</a></button>
+                    <% } else { %>
+                        <p class="text-muted">Only creater can tweek the word!</p>
+                    <% } %>
                 </li>
+
+            </div>
+            
        <% }) %>
     </ul>
  

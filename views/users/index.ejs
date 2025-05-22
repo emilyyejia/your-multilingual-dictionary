@@ -1,26 +1,31 @@
 <%- include('../partials/header.ejs') %>
 
 <h1>Word Junction</h1>
-<% if (words.length){ %>
-    <% words.forEach((word) => { %>
-        <h2 class="my-4"><%= word.name.toUpperCase() %></h2>
-          <p>Created by <%= word.owner.name%> on <%= word.owner.createdAt.toLocaleDateString() %></p>
-            <% word.meanings.forEach((meaning) => { %>
-                    <p><strong>Explanation:</strong> <%= meaning.explanation %> 
-                        <% if (meaning.contributor) { %>
-                            , contributed by <%= meaning.contributor.name %> on <%= meaning.contributor.createdAt.toLocaleDateString() %>
-                        <% } %>
-                    </p>
-                    <% if (meaning.image) { %>
-                        <img src="<%= meaning.image %>" alt="<%= word.name %> image" style="max-width: 200px;">
-                    <% } %>
-           <% }) %>
+<div class="meaning-container">
+    <% if (words.length){ %>
+      <% words.forEach((word) => { %>
+        <div class="word-block">
+          <h2><%= word.name.toUpperCase() %></h2>
+          <p class="created-by">Created by <%= word.owner.name %> on <%= word.owner.createdAt.toLocaleDateString() %></p>
+  
+          <% word.meanings.forEach((meaning) => { %>
+            <div class="meaning-block">
+              <p>
+                Explanation: <%= meaning.explanation %> 
+                <% if (meaning.contributor) { %>
+                  <br>Contributed by <%= meaning.contributor.name %> on <%= meaning.contributor.createdAt.toLocaleDateString() %>
+                <% } %>
+              </p>
+              <% if (meaning.image) { %>
+                <img src="<%= meaning.image %>" alt="<%= word.name %> image">
+              <% } %>
+            </div>
+          <% }) %>
+        </div>
+      <% }); %>
+    <% } else { %>
+      <p>Contribute to our community by signing up!</p>
+    <% } %>
+  </div>
 
-           </ul>   
-   <% }); %>
-
-<% } else {%>
-    <p>Contribute to our community by signing up!</p>
-
-<% } %>
 <%- include('../partials/footer.ejs') %>
