@@ -1,12 +1,12 @@
 <%- include('../partials/header.ejs') %>
 
 <h1>Word Details</h1>
-<div>
+
     <h2><%= word.name %></h2>
-    <ul>
+    <div class="meaning-container">
         <% word.meanings.forEach((meaning, index) => { %>
             <div class="meaning-block">
-                <li>
+                
                     <p>Explanation: <%= meaning.explanation %></p>
                     <% if (meaning.image) { %>
                         <img src="<%= meaning.image %>" alt="<%= word.name %> image" style="max-width: 200px;">
@@ -16,15 +16,11 @@
                     <% } else { %>
                         <p class="text-muted">Only creater can tweek the word!</p>
                     <% } %>
-                </li>
-
-            </div>
-            
+            </div>    
        <% }) %>
-    </ul>
- 
+    </div>
     <form action="/words/<%= word._id %>?_method=DELETE" method="POST">
-        <button type="submit">Remove from My Shelf </button>
+        <button type="submit">Remove from Shelf</button>
     </form>
     
    

@@ -1,32 +1,21 @@
 <%- include('../partials/header.ejs') %>
 
 <h1>Word Details</h1>
-<div>
     <h2><%= word.name %></h2>
     <div class="word-block">
-    <ul>
-    
         <% word.meanings.forEach((meaning) => { %>
             <div class="meaning-block">
-                <li>
                     <p>Explanation: <%= meaning.explanation %></p>
                     <% if (meaning.image) { %>
                         <img src="<%= meaning.image %>" alt="<%= word.name %> image" style="max-width: 200px;">
                     <% } %>
-                    </li>
-            </div>
-           
+            </div>      
        <% }) %>
-    </ul>
+       
     </div>
-    <div class="meaning-container">
-        <button type="submit"><a href="/community/<%= word._id  %>/new">Add Explanation</a></button>
-        <form action="/community/<%= word._id %>/dictionary" method="POST">
-        <button type="submit">Add to My Word Bank</button>
-        </form>
+    <button type="submit"><a href="/community/<%= word._id  %>/new">Add Explanation</a></button>
+    <form action="/community/<%= word._id %>/dictionary" method="POST">
+    <button type="submit">Add to My Word Bank</button>
+    </form>    
 
-    </div>
-
-    
-</div>
 <%- include('../partials/footer.ejs') %>
