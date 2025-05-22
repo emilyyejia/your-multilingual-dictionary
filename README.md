@@ -1,15 +1,13 @@
-<div id="header" style="text-align: center" >
+<p align="center">
+  <img src="https://img.freepik.com/free-vector/happy-people-speaking-different-languages_23-2147887758.jpg?uid=R58614155&ga=GA1.1.2074067618.1746232011&semt=ais_hybrid&w=740" alt="multilingual banner" height="300">
+</p>
 
-  <img src="https://img.freepik.com/free-vector/happy-people-speaking-different-languages_23-2147887758.jpg?uid=R58614155&ga=GA1.1.2074067618.1746232011&semt=ais_hybrid&w=740" weight="1000px" height="300" alt="blackjack game at casino">
+<h1 align="center">Your Multilinigual Dictionary</h1>
 
-</div>
-  <div id="description" style="text-align: center">
+<p align="center">
+  <a href="https://your-multilingual-dictionary-edec17a4e7e6.herokuapp.com/">CLICK TO PLAY</a>
+</p>
 
-  # BLACKJACK
-
-  ### [CLICK TO PlAY](https://your-multilingual-dictionary-edec17a4e7e6.herokuapp.com/)
-
-</div>
 
 ## Description
 Multilingual Dictionary is an inclusive, community-driven platform designed to support newcomer students and language learners through multilingualism and translanguaging. It allows users to create, explore, and contribute word entries with explanations, translations, and images across multiple languages. By embracing users’ diverse language backgrounds, the platform promotes deeper understanding and meaningful learning. Each word entry highlights its creator and contributors, fostering collaboration and empowering newcomers to connect their home languages with new languages in school and community settings.
