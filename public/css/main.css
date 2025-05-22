@@ -163,15 +163,6 @@ button:hover {
   margin-bottom: 1rem;
 }
 
-@media (max-width: 600px) {
-  .meaning-block img {
-    height: 100px;
-    width: 100px;;
-  }
-  h2 {
-    font-size: 1rem!important;
-  }
-}
 .word-details-container {
   display: flex;
   flex-direction: row;
@@ -179,4 +170,77 @@ button:hover {
   justify-content: center;
   gap: 1rem;
 
+}
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.2rem !important;
+    text-align: center;
+    margin-top: 1rem !important;
+  }
+
+  p,
+  .created-by {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  nav,
+  footer {
+    flex-direction: column;
+    text-align: center;
+    font-size: 2.5vmin;
+    gap: 1rem;
+  }
+
+  main {
+    margin-top: 3vmin;
+    padding: 0 1rem;
+  }
+
+  form {
+    width: 95%;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  textarea,
+  select,
+  input[type="url"] {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .meaning-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .word-block {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .meaning-block img {
+    height: auto;
+    width: 90%;
+    max-width: 300px;
+  }
+
+  .word-details-container {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  button[type="submit"] {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
 }

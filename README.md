@@ -31,7 +31,7 @@ Multilingual Dictionary is an inclusive, community-driven platform designed to s
   ![EJS](https://img.shields.io/badge/EJS-B4CA65?logo=ejs&logoColor=fff)
   ![CSS](https://img.shields.io/badge/CSS-1572B6?logo=css3&logoColor=fff)
   ![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=fff)
-  
+  ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?logo=mongodb&logoColor=white)
 
 ## Getting Started
 
