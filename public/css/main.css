@@ -203,7 +203,7 @@ button:hover {
   }
 
   form {
-    width: 95%;
+    width: 80%;
   }
 
   input[type="text"],
@@ -228,9 +228,8 @@ button:hover {
   }
 
   .meaning-block img {
-    height: auto;
-    width: 90%;
-    max-width: 300px;
+    width: 150px;
+    height: 150px;
   }
 
   .word-details-container {
@@ -242,5 +241,9 @@ button:hover {
   button[type="submit"] {
     font-size: 1rem;
     padding: 0.5rem 1rem;
+  }
+  .responsive-img {
+    max-width: 100%;
+    height: auto;
   }
 }
