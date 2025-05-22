@@ -16,13 +16,13 @@ Multilingual Dictionary is an inclusive, community-driven platform designed to s
 
 
 ## Screenshot
-| Page           | Preview |
-|----------------|---------|
-| Home Page      | <img src="/css/home.png" alt="Home Page"  |
-| Search Result  | <img src="/css/dictioanryworddetail.png" alt="Search Result" |
-| Word Junction  | <img src="/css/wordjunction.png" alt="Word Junction" |
-| Word Shelf     | <img src="/css/wordshelf.png" alt="Word Shelf" |
-| Word Detail    | <img src="/css/shelfworddetail.png" alt="Shelf Word Detail" |
+| Description    | Screenshots                                      |
+|---------------|-------------------------------------------------|
+| Home Page     | <img src="screenshots/home.png" alt="home page"> |
+| Search Result | <img src="screenshots/dictionaryworddetail.png" alt="search result"> |
+| Word Junction | <img src="screenshots/wordjunction.png" alt="word junction"> |
+| Word Shelf    | <img src="screenshots/wordshelf.png" alt="wordshelf"> |
+| Word Detail   | <img src="screenshots/shelfworddetail.png" alt="shelf word detail"> |
 
 
 ## Technologies Used
