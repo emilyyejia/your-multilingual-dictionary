@@ -6,13 +6,21 @@ const Meaning = require('../models/meaning');
 const ensureLoggedIn = require('../middleware/ensure-logged-in');
 
 router.get('/', async (req, res) => {
+  const page = parseInt(req.query.page) || 1;
+  const limit = 2;
+  const skip = (page -1) * limit;
+
     const words = await Word.find({})
+    .skip(skip)
+    .limit(limit)
     .populate('owner')
     .populate({
       path: 'meanings',
       populate: { path: 'contributor' } 
   });
-    res.render('users/index.ejs', { words });
+  const total = await Word.countDocuments();
+  const totalPages = Math.ceil(total/limit);
+    res.render('users/index.ejs', { words, page, totalPages });
 });
 
 router.get('/:id', async (req, res) => {
