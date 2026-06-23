@@ -3,7 +3,7 @@
 <h1>Add Word</h1>
 <form action="/words" method="POST">
         <label for="word">Word:</label>
-        <input type="text" id="word" name="name" required>
+        <input type="text" id="word" name="name" value="<%= typeof prefillName !== 'undefined' ? prefillName : '' %>" required>
         <label for="explanation">Explain it in your home language:</label>
         <input type="text" id="explanation" name="explanation" required>
         <label for="image">You can add a Image URL(optional):</label>

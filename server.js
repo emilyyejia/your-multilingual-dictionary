@@ -35,11 +35,17 @@ app.use(session({
 
 app.use(require('./middleware/add-user-to-req-and-locals'));
 app.get('/', async (req, res) => {
-  const searchedItem = req.query.word || '';
-  const query = searchedItem ? { name:searchedItem } : null;
-  const word = await Word.findOne(query);
-  res.render('home.ejs', { searchedItem, word});
- 
+  const searchedItem = (req.query.word || '').trim();
+  let words = [];
+  if (searchedItem) {
+    // Escape regex metacharacters so user input can't break or inject the pattern
+    const safe = searchedItem.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    words = await Word.find({ name: { $regex: safe, $options: 'i' } })
+      .sort({ name: 1 })
+      .limit(50)
+      .populate('owner');
+  }
+  res.render('home.ejs', { searchedItem, words });
 });
 
 app.use('/auth', require('./controllers/auth'));

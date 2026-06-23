@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
 
 
 router.get('/new', (req, res) => {
-  res.render('words/new.ejs');
+  res.render('words/new.ejs', { prefillName: req.query.name || '' });
 });
 
 router.post('/', async(req, res) => {

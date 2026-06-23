@@ -1,19 +1,60 @@
 <%- include('./partials/header.ejs') %>
-<h1 style="color: rgb(41, 216, 41);font-weight: bold;"> Word Quest</h1>
-<img src="/css/homepage.jpg" width="400px" height="300px"  class="responsive-img" alt="colorful books">
-  <form action="/" method="GET" class="my-4" >
-    <input type="text" name="word" placeholder="Start your word quest…" value="<%= searchedItem %>" >
-    <button type="submit" style="width: 100px;" >Search</button>
-  </form>
-  <% if (searchedItem) { %>
-    <% if (word) { %>
-      <div class="text-dark fs-4 fw-bold">Ta-da! We found it:</div>
-      <h2><a href="/community/<%= word._id %>"><%= word.name %></a></h2>
-    <% } else { %>
-      <div class="text-dark fs-4 fw-bold">Hmm... "<%= searchedItem %>" isn’t in the dictionary yet. Sign in and let the word-building begin!</h2>
-    <% } %>
-  <% } else { %>
-    <div class="text-dark fs-4 fw-bold">Discover shared wisdom—search the word first.</div>
-  <% } %>
-<%- include('./partials/footer.ejs') %>
 
+<h1 style="color: rgb(41, 216, 41); font-weight: bold;">Word Quest</h1>
+
+<% if (!searchedItem) { %>
+  <img src="/css/homepage.jpg" width="400px" height="300px" class="responsive-img" alt="children greeting in many languages">
+<% } %>
+
+<form action="/" method="GET" class="my-4">
+  <input type="text" name="word" placeholder="Start your word quest…" value="<%= searchedItem %>">
+  <button type="submit" style="width: 100px;">Search</button>
+</form>
+
+<% if (searchedItem) { %>
+  <% if (words.length) { %>
+    <div class="text-dark fs-4 fw-bold mb-3 text-center">
+      Ta-da! <%= words.length %> word<%= words.length > 1 ? 's' : '' %> match "<%= searchedItem %>":
+    </div>
+    <ul class="search-results">
+      <% words.forEach((w) => { %>
+        <li>
+          <a href="/community/<%= w._id %>"><%= w.name.toUpperCase() %></a>
+          <% if (w.owner) { %><span class="result-meta">added by <%= w.owner.name %></span><% } %>
+        </li>
+      <% }) %>
+    </ul>
+  <% } else { %>
+    <div class="empty-state text-dark fs-5">
+      <p class="fw-bold mb-2">Hmm… no words match "<%= searchedItem %>" yet.</p>
+      <% if (user) { %>
+        <p class="mb-3">Be the first to add it in your language!</p>
+        <button type="submit"><a href="/words/new?name=<%= encodeURIComponent(searchedItem) %>">Add "<%= searchedItem %>"</a></button>
+      <% } else { %>
+        <p>This dictionary is built by the community. <a href="/auth/sign-up">Sign up</a> or <a href="/auth/sign-in">sign in</a> to add it and let the word-building begin!</p>
+      <% } %>
+    </div>
+  <% } %>
+<% } else { %>
+  <div class="how-it-works text-dark">
+    <p class="fs-4 fw-bold mb-2 text-center">A dictionary built by our community.</p>
+    <p class="text-center mb-3">Every word and meaning here is contributed by members — in many languages.</p>
+    <div class="steps">
+      <div class="step">
+        <span class="step-num">1</span>
+        <p><strong>Search</strong> a word to see how others explain it in their home languages, with pictures.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <p><strong>Sign in</strong> to add a new word or contribute a meaning in your own language.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <p><strong>Save</strong> words to your personal Wordshelf to revisit anytime.</p>
+      </div>
+    </div>
+    <p class="mt-4 text-center">Want to explore everything first? Visit <a href="/community">Word Junction</a>.</p>
+  </div>
+<% } %>
+
+<%- include('./partials/footer.ejs') %>

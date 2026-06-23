@@ -171,6 +171,89 @@ button:hover {
   gap: 1rem;
 
 }
+
+/* Home page: search results list */
+.search-results {
+  list-style: none;
+  padding: 0;
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-results li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid lightslategray;
+  border-radius: 1vmin;
+}
+
+.search-results li a {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: rgb(20, 197, 232);
+  text-decoration: none;
+}
+
+.search-results li a:hover {
+  text-decoration: underline;
+}
+
+.result-meta {
+  font-size: 0.9rem;
+  color: lightslategray;
+}
+
+/* Home page: onboarding + empty state */
+.how-it-works,
+.empty-state {
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.how-it-works a,
+.empty-state a {
+  color: rgb(20, 197, 232);
+  font-weight: bold;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.step p {
+  text-align: left !important;
+  margin: 0 !important;
+}
+
+.step-num {
+  flex: 0 0 auto;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background-color: rgb(41, 216, 41);
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media (max-width: 600px) {
   h1 {
     font-size: 1.5rem;
