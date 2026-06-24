@@ -254,6 +254,65 @@ button:hover {
   justify-content: center;
 }
 
+/* Interactive onboarding: click steps to clear, then the guide dismisses */
+.how-it-works {
+  position: relative;
+}
+
+.onboard-skip {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 4px 6px;
+  background: transparent;
+  border: 0;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: lightslategray;
+  cursor: pointer;
+}
+
+.onboard-skip:hover {
+  background: transparent;
+  color: rgb(41, 216, 41);
+}
+
+.onboard-hint {
+  font-size: 0.9rem;
+  color: lightslategray;
+}
+
+.steps .step {
+  width: 100%;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 8px;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.15s ease;
+}
+
+.steps .step:hover {
+  background-color: rgba(41, 216, 41, 0.1);
+  color: inherit;
+}
+
+.step--done .step-num {
+  background-color: rgb(26, 160, 26);
+}
+
+.step--gone {
+  opacity: 0;
+  transform: translateX(24px);
+}
+
+.onboard--leaving {
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
 @media (max-width: 600px) {
   h1 {
     font-size: 1.5rem;

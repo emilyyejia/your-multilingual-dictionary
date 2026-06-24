@@ -36,25 +36,56 @@
     </div>
   <% } %>
 <% } else { %>
-  <div class="how-it-works text-dark">
+  <div class="how-it-works text-dark" id="onboard">
+    <button type="button" class="onboard-skip" id="onboardSkip" aria-label="Dismiss the guide">Skip ✕</button>
     <p class="fs-4 fw-bold mb-2 text-center">A dictionary built by our community.</p>
-    <p class="text-center mb-3">Every word and meaning here is contributed by members — in many languages.</p>
-    <div class="steps">
-      <div class="step">
+    <p class="text-center mb-1">Every word and meaning here is contributed by members — in many languages.</p>
+    <p class="onboard-hint text-center mb-3">Tap each step to clear it.</p>
+    <div class="steps" id="onboardSteps">
+      <button type="button" class="step">
         <span class="step-num">1</span>
         <p><strong>Search</strong> a word to see how others explain it in their home languages, with pictures.</p>
-      </div>
-      <div class="step">
+      </button>
+      <button type="button" class="step">
         <span class="step-num">2</span>
         <p><strong>Sign in</strong> to add a new word or contribute a meaning in your own language.</p>
-      </div>
-      <div class="step">
+      </button>
+      <button type="button" class="step">
         <span class="step-num">3</span>
         <p><strong>Save</strong> words to your personal Wordshelf to revisit anytime.</p>
-      </div>
+      </button>
     </div>
-    <p class="mt-4 text-center">Want to explore everything first? Visit <a href="/community">Word Junction</a>.</p>
+    <p class="mt-4 text-center onboard-explore">Want to explore everything first? Visit <a href="/community">Word Junction</a>.</p>
   </div>
+  <script>
+    (function () {
+      var box = document.getElementById('onboard');
+      if (!box) return;
+      var stepsWrap = document.getElementById('onboardSteps');
+      function leaveBox() {
+        box.classList.add('onboard--leaving');
+        setTimeout(function () { box.remove(); }, 350);
+      }
+      function clearStep(step) {
+        if (step.classList.contains('step--done')) return;
+        step.classList.add('step--done');
+        var num = step.querySelector('.step-num');
+        if (num) num.textContent = '✓';
+        setTimeout(function () {
+          step.classList.add('step--gone');
+          setTimeout(function () {
+            step.remove();
+            if (!stepsWrap.querySelector('.step')) leaveBox();
+          }, 320);
+        }, 200);
+      }
+      Array.prototype.forEach.call(box.querySelectorAll('.step'), function (step) {
+        step.addEventListener('click', function () { clearStep(step); });
+      });
+      var skip = document.getElementById('onboardSkip');
+      if (skip) skip.addEventListener('click', leaveBox);
+    })();
+  </script>
 <% } %>
 
 <%- include('./partials/footer.ejs') %>
