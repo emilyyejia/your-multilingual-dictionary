@@ -14,7 +14,7 @@
 <% if (searchedItem) { %>
   <% if (words.length) { %>
     <div class="text-dark fs-4 fw-bold mb-3 text-center">
-      Ta-da! <%= words.length %> word<%= words.length > 1 ? 's' : '' %> match "<%= searchedItem %>":
+      Ta-da! <%= words.length %> word<%= words.length > 1 ? 's' : '' %> match<%= words.length > 1 ? '' : 'es' %> "<%= searchedItem %>":
     </div>
     <ul class="search-results">
       <% words.forEach((w) => { %>
