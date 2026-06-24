@@ -211,14 +211,16 @@ button:hover {
 
 /* Home page: onboarding + empty state */
 .how-it-works,
-.empty-state {
+.empty-state,
+.explore {
   width: 80%;
   max-width: 600px;
   margin: 0 auto;
 }
 
 .how-it-works a,
-.empty-state a {
+.empty-state a,
+.explore a {
   color: rgb(20, 197, 232);
   font-weight: bold;
 }

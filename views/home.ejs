@@ -3,7 +3,7 @@
 <h1 style="color: rgb(41, 216, 41); font-weight: bold;">Word Quest</h1>
 
 <% if (!searchedItem) { %>
-  <img src="/css/homepage.jpg" width="400px" height="300px" class="responsive-img" alt="children greeting in many languages">
+  <img src="/img/languages.svg" width="440" class="responsive-img" alt="Children around a globe greeting each other in different languages">
 <% } %>
 
 <form action="/" method="GET" class="my-4">
@@ -35,11 +35,10 @@
       <% } %>
     </div>
   <% } %>
-<% } else { %>
+<% } else if (user) { %>
   <div class="how-it-works text-dark" id="onboard">
     <button type="button" class="onboard-skip" id="onboardSkip" aria-label="Dismiss the guide">Skip ✕</button>
-    <p class="fs-4 fw-bold mb-2 text-center">A dictionary built by our community.</p>
-    <p class="text-center mb-1">Every word and meaning here is contributed by members — in many languages.</p>
+    <p class="fs-4 fw-bold mb-2 text-center">Welcome<% if (user.name) { %>, <%= user.name %><% } %>! Here's how to dive in.</p>
     <p class="onboard-hint text-center mb-3">Tap each step to clear it.</p>
     <div class="steps" id="onboardSteps">
       <button type="button" class="step">
@@ -48,14 +47,14 @@
       </button>
       <button type="button" class="step">
         <span class="step-num">2</span>
-        <p><strong>Sign in</strong> to add a new word or contribute a meaning in your own language.</p>
+        <p><strong>Add</strong> a word, or contribute a meaning in your own language.</p>
       </button>
       <button type="button" class="step">
         <span class="step-num">3</span>
-        <p><strong>Save</strong> words to your personal Wordshelf to revisit anytime.</p>
+        <p><strong>Save</strong> words to your Wordshelf to revisit anytime.</p>
       </button>
     </div>
-    <p class="mt-4 text-center onboard-explore">Want to explore everything first? Visit <a href="/community">Word Junction</a>.</p>
+    <p class="mt-4 text-center onboard-explore">See everyone's words in <a href="/community">Word Junction</a>.</p>
   </div>
   <script>
     (function () {
@@ -86,6 +85,12 @@
       if (skip) skip.addEventListener('click', leaveBox);
     })();
   </script>
+<% } else { %>
+  <div class="explore text-dark">
+    <p class="fs-4 fw-bold text-center mb-2">Start by exploring.</p>
+    <p class="text-center mb-3">Search a word above to see how our community explains it in many languages — or browse everything in <a href="/community">Word Junction</a>.</p>
+    <p class="text-center">New here? <a href="/auth/sign-up">Sign up</a> to add words in your own language — it's free.</p>
+  </div>
 <% } %>
 
 <%- include('./partials/footer.ejs') %>

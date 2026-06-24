@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 470" role="img" width="720" height="470">
+  <title>Children around a globe greeting each other in different languages</title>
+  <desc>A flat illustration of a green and blue globe with four smiling children in speech-bubble portraits saying hello, salut, ola and ni hao, with the word Languages.</desc>
+  <defs>
+    <clipPath id="globe"><ellipse cx="360" cy="215" rx="288" ry="192"/></clipPath>
+  </defs>
+
+  <ellipse cx="360" cy="215" rx="306" ry="206" fill="#e0f4fc"/>
+  <ellipse cx="360" cy="215" rx="288" ry="192" fill="#46bfe6"/>
+
+  <g clip-path="url(#globe)">
+    <path d="M 110 150 C 150 95 250 100 270 150 C 290 195 230 225 180 215 C 120 205 80 200 110 150 Z" fill="#57c489"/>
+    <path d="M 430 110 C 510 95 590 130 580 180 C 572 220 500 220 460 195 C 420 170 370 125 430 110 Z" fill="#51bd83"/>
+    <path d="M 250 320 C 300 285 430 290 450 330 C 468 368 380 392 320 380 C 268 370 210 358 250 320 Z" fill="#57c489"/>
+    <path d="M 150 300 C 175 282 215 292 215 315 C 215 338 180 348 158 335 C 138 323 128 318 150 300 Z" fill="#51bd83"/>
+    <path d="M 540 250 C 565 236 605 250 600 272 C 596 292 560 296 540 282 C 522 270 518 262 540 250 Z" fill="#57c489"/>
+    <path d="M 120 250 q 30 -14 60 0" stroke="#8fdcf2" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/>
+    <path d="M 470 360 q 26 -12 52 0" stroke="#8fdcf2" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/>
+  </g>
+
+  <text x="360" y="400" text-anchor="middle" font-family="'Baloo 2','Comic Sans MS','Chalkboard SE',sans-serif" font-size="42" font-weight="800" fill="#ffffff" letter-spacing="1.5">Languages</text>
+
+  <g transform="translate(440,115)">
+    <circle r="46" fill="#fff" stroke="#e7eef3" stroke-width="2"/>
+    <circle cy="4" r="30" fill="#f4cda6"/>
+    <path d="M -30 6 C -30 -22 30 -22 30 6 Q 12 -10 0 -8 Q -12 -10 -30 6 Z" fill="#f1c14f"/>
+    <circle cx="-10" cy="3" r="3.2" fill="#3b302b"/>
+    <circle cx="10" cy="3" r="3.2" fill="#3b302b"/>
+    <path d="M -9 15 Q 0 22 9 15" fill="none" stroke="#b06a55" stroke-width="2.6" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(360,210)">
+    <circle r="46" fill="#fff" stroke="#e7eef3" stroke-width="2"/>
+    <circle cy="4" r="30" fill="#dd9e6f"/>
+    <path d="M -27 -2 Q -39 16 -30 32 Q -21 15 -24 0 Z" fill="#8b5a3c"/>
+    <path d="M 27 -2 Q 39 16 30 32 Q 21 15 24 0 Z" fill="#8b5a3c"/>
+    <path d="M -30 6 C -30 -24 30 -24 30 6 Q 12 -11 0 -9 Q -12 -11 -30 6 Z" fill="#8b5a3c"/>
+    <circle cx="-10" cy="3" r="3.2" fill="#3b302b"/>
+    <circle cx="10" cy="3" r="3.2" fill="#3b302b"/>
+    <path d="M -9 15 Q 0 22 9 15" fill="none" stroke="#a85d48" stroke-width="2.6" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(245,290)">
+    <circle r="46" fill="#fff" stroke="#e7eef3" stroke-width="2"/>
+    <circle cy="4" r="30" fill="#ad7549"/>
+    <path d="M -30 6 C -30 -23 30 -23 30 6 Q 12 -11 0 -9 Q -12 -11 -30 6 Z" fill="#2f2a28"/>
+    <circle cx="-10" cy="3" r="3.2" fill="#2a221e"/>
+    <circle cx="10" cy="3" r="3.2" fill="#2a221e"/>
+    <path d="M -9 15 Q 0 22 9 15" fill="none" stroke="#8a5236" stroke-width="2.6" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(500,300)">
+    <circle r="46" fill="#fff" stroke="#e7eef3" stroke-width="2"/>
+    <circle cy="4" r="30" fill="#f1c19a"/>
+    <path d="M -28 0 Q -40 18 -31 34 Q -22 16 -25 2 Z" fill="#2b2521"/>
+    <path d="M 28 0 Q 40 18 31 34 Q 22 16 25 2 Z" fill="#2b2521"/>
+    <path d="M -30 6 C -30 -24 30 -24 30 6 Q 12 -11 0 -9 Q -12 -11 -30 6 Z" fill="#2b2521"/>
+    <circle cx="-10" cy="3" r="3.2" fill="#2a221e"/>
+    <circle cx="10" cy="3" r="3.2" fill="#2a221e"/>
+    <path d="M -9 15 Q 0 22 9 15" fill="none" stroke="#b06a55" stroke-width="2.6" stroke-linecap="round"/>
+  </g>
+
+  <g>
+    <path d="M 366 100 L 366 122 L 402 115 Z" fill="#ff9d3d"/>
+    <rect x="286" y="84" width="92" height="44" rx="16" fill="#ff9d3d"/>
+    <text x="332" y="113" text-anchor="middle" font-family="'Baloo 2','Comic Sans MS',sans-serif" font-size="22" font-weight="700" fill="#fff">Salut</text>
+  </g>
+
+  <g>
+    <path d="M 292 172 L 308 172 L 322 200 Z" fill="#ee4d4d"/>
+    <rect x="210" y="136" width="92" height="44" rx="16" fill="#ee4d4d"/>
+    <text x="256" y="165" text-anchor="middle" font-family="'Baloo 2','Comic Sans MS',sans-serif" font-size="22" font-weight="700" fill="#fff">Hello</text>
+  </g>
+
+  <g>
+    <path d="M 184 290 L 184 312 L 216 298 Z" fill="#ff9d3d"/>
+    <rect x="116" y="278" width="74" height="44" rx="16" fill="#ff9d3d"/>
+    <text x="153" y="307" text-anchor="middle" font-family="'Baloo 2','Comic Sans MS',sans-serif" font-size="22" font-weight="700" fill="#fff">Olá</text>
+  </g>
+
+  <g>
+    <path d="M 568 256 L 586 258 L 552 288 Z" fill="#ee4d4d"/>
+    <rect x="556" y="214" width="82" height="48" rx="16" fill="#ee4d4d"/>
+    <text x="597" y="246" text-anchor="middle" font-family="'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif" font-size="26" font-weight="700" fill="#fff">你好</text>
+  </g>
+</svg>
